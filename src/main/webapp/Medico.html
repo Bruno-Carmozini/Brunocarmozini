@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de cadastro de Médicos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #loading {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        #conteudo {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #formulario {
+            display: none;
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        #buttonnew {
+    		background-color: #4caf50;
+    		color: white;
+    		padding: 10px 20px;
+    		border: none;
+    		border-radius: 5px;
+    		cursor: pointer;
+    		position: absolute;
+    		left: 0; 
+    		top: -50px; 
+		}
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="button"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Exemplo de CRUD de Médicos</h1>
+    <div id="loading" style="display: none;">
+    </div>
+
+    <div id="conteudo">
+        <input id="buttonnew" type="button" value="novo" onclick="novo()" />
+        <div id="formulario" style="display: none;">
+
+            <label>
+                Nome: <input type="text" id="nome" />
+            </label><br />
+            <label>
+                Especialidade: <input type="text" id="especialidade" />
+            </label><br />
+            <label>
+                CRM: <input type="text" id="crm" />
+            </label><br />
+            <label>
+                Idade: <input type="text" id="idade" />
+            </label><br />
+            <label>
+                Formação: <input type="text" id="formacao" />
+            </label><br />
+            <input type="button" value="salvar" onclick="salvar()" />
+            <input type="button" value="cancelar" onclick="cancelar()" />
+
+        </div>
+        <div id="lista">
+            <table border="1" width="100%">
+                <thead>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Especialidade</th>
+                    <th>CRM</th>
+                    <th>Idade</th>
+                    <th>Formação</th>
+                    <th></th>
+                </thead>
+                <tbody id="dados">
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <script src="Medico.js"></script>
+</body>
+
+</html>
